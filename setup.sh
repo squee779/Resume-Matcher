@@ -117,7 +117,8 @@ if ! command -v ollama &> /dev/null; then
     curl -LsSf https://ollama.com/install.sh | sh || error "Failed to install Ollama"
     export PATH="$HOME/.local/bin:$PATH"
   fi
-  success "Ollama installed"
+  ollama serve &
+  success "Ollama installed and started"
 fi
 
 if ! ollama list | grep -q 'gemma3:4b'; then
