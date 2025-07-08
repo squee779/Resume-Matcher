@@ -117,7 +117,7 @@ if ! command -v ollama &> /dev/null; then
     curl -LsSf https://ollama.com/install.sh | sh || error "Failed to install Ollama"
     export PATH="$HOME/.local/bin:$PATH"
   fi
-  ollama serve &
+  ollama serve > /dev/null 2>&1 &
   success "Ollama installed and started"
 fi
 
