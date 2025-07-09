@@ -122,7 +122,7 @@ fi
 info "Starting ollama server"
 sleep 5
 ollama serve > /dev/null 2>&1 &
-aleep 10
+sleep 10
 
 if ! ollama list | grep -q 'gemma3:4b'; then
   info "Pulling gemma3:4b model…"
